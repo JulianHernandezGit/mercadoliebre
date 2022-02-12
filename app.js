@@ -9,9 +9,7 @@ const pathStatic = path.resolve(__dirname + "/public");
 
 app.use(express.static(pathStatic)); 
 
-app.listen(3000, () => {
-    console.log("Mercadoliebre está corriendo");
-});
+app.listen(process.env.PORT || 5000);
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/home.html");
