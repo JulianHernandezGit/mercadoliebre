@@ -1,13 +1,9 @@
 const express = require("express");
-const { dirname } = require("path");
+const path = require("path");
 
 const app = express();
 
-const path = require("path");
-
-const pathStatic = path.resolve(__dirname + "/public");
-
-app.use(express.static(pathStatic)); 
+app.use(express.static('public'));
 
 app.listen(process.env.PORT || 5000);
 
